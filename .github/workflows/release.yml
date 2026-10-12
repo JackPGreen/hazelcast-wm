@@ -30,9 +30,7 @@ jobs:
       - uses: hazelcast/maven-release-tooling/release@main
         with:
           next-snapshot-version: ${{ inputs.next-snapshot-version }}
-          release-files: |
-            **/target/hazelcast-wm-${{ env.VERSION }}.jar
-            **/target/hazelcast-wm-${{ env.VERSION }}-sources.jar
+          release-files: **/target/hazelcast-wm-*.jar
         env:
           MAVEN_ARGS: --activate-profiles release  
           MAVEN_USERNAME: ${{ secrets.SONATYPE_OSS_USERNAME }}
